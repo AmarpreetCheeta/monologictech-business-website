@@ -1,0 +1,2251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonologicTech Solutions · Refurbished Laptops, Repair & Accessories</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #0b1c2e;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    img, svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    :root {
+      --brand-blue: #0b5ed7;
+      --brand-dark: #0b1c2e;
+      --brand-light-blue: #e9f2ff;
+      --brand-accent: #1e3a5f;
+    }
+
+    /* ------ Header / Nav ------ */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e9eef3;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+      gap: 0.75rem;
+      position: relative;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: -0.02em;
+      color: var(--brand-dark);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      background: var(--brand-blue);
+      width: 42px;
+      height: 42px;
+      border-radius: 13px 4px 13px 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 800;
+      box-shadow: 0 8px 16px -6px rgba(11, 94, 215, 0.3);
+      flex-shrink: 0;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .logo-text .main {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--brand-dark);
+    }
+
+    .logo-text .main span {
+      color: var(--brand-blue);
+    }
+
+    .logo-text .sub {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .tagline-small {
+      font-size: 0.58rem;
+      font-weight: 500;
+      color: #94a3b8;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 44px;
+      height: 44px;
+      background: var(--brand-light-blue);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:active {
+      background: #d7e7ff;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2.5px;
+      background: var(--brand-dark);
+      border-radius: 4px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .nav-toggle.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1e293b;
+      font-size: 0.95rem;
+      transition: color 0.15s;
+      padding: 0.25rem 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:active {
+      color: var(--brand-blue);
+    }
+
+    .cta-nav {
+      background: var(--brand-blue);
+      color: white !important;
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: background 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .cta-nav:hover,
+    .cta-nav:active {
+      background: #0a4fc0;
+    }
+
+    @media (max-width: 1023px) {
+      .nav-toggle { display: flex; }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #ffffff;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid #e9eef3;
+        box-shadow: 0 14px 24px -12px rgba(11, 28, 46, 0.12);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+        z-index: 99;
+      }
+
+      .nav-links.open {
+        max-height: 420px;
+        padding: 0.75rem 0;
+      }
+
+      .nav-links a {
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+        border-bottom: 1px solid #f1f5f9;
+        width: 100%;
+        display: block;
+      }
+
+      .nav-links a:last-child { border-bottom: none; }
+
+      .nav-links a:hover,
+      .nav-links a:active {
+        background: var(--brand-light-blue);
+        color: var(--brand-blue);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .nav-toggle { display: none; }
+
+      .nav-links {
+        position: static;
+        flex-direction: row;
+        max-height: none;
+        overflow: visible;
+        box-shadow: none;
+        border-top: none;
+        padding: 0;
+        background: transparent;
+      }
+
+      .nav-links a {
+        border-bottom: none;
+        padding: 0;
+        width: auto;
+        display: inline;
+      }
+
+      .nav-links a:hover { background: transparent; }
+    }
+
+    /* ------ Hero ------ */
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 100%);
+      padding: 2rem 0 2.5rem;
+      border-bottom: 4px solid var(--brand-blue);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: var(--brand-light-blue);
+      color: var(--brand-blue);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.3rem 1rem;
+      border-radius: 50px;
+      letter-spacing: 0.04em;
+      border: 1px solid #cfe2ff;
+      align-self: flex-start;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      color: var(--brand-dark);
+    }
+
+    .hero-content h1 .highlight {
+      color: var(--brand-blue);
+      display: block;
+    }
+
+    .hero-subhead {
+      font-size: 1rem;
+      color: #33475b;
+      font-style: italic;
+      border-left: 4px solid var(--brand-blue);
+      padding-left: 0.9rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.25rem;
+    }
+
+    .btn-primary {
+      background: var(--brand-blue);
+      color: white;
+      padding: 0.85rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 10px 20px -8px rgba(11, 94, 215, 0.4);
+      flex: 1;
+      min-width: 140px;
+      font-family: inherit;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:active { background: #0a4fc0; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--brand-dark);
+      padding: 0.85rem 1.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border: 1.5px solid #cbd5e1;
+      transition: all 0.2s;
+      background: white;
+      flex: 1;
+      min-width: 140px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn-outline:hover,
+    .btn-outline:active {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue);
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .hero-image svg {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 30px -15px rgba(11, 94, 215, 0.15);
+    }
+
+    .slogan-bar {
+      background: var(--brand-dark);
+      color: white;
+      padding: 0.85rem 0.5rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 1.75rem;
+      border-radius: 0 0 24px 24px;
+      line-height: 1.8;
+    }
+
+    .slogan-bar span {
+      margin: 0 0.35rem;
+      color: #b9d1e8;
+    }
+
+    /* ------ Section ------ */
+    .section { padding: 3rem 0; }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      padding: 0 0.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+      color: var(--brand-dark);
+    }
+
+    .section-header p {
+      font-size: 1rem;
+      color: #4b5f73;
+    }
+
+    /* ------ Services ------ */
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 24px;
+      padding: 2rem 1.5rem;
+      border: 1px solid #e9eef3;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--brand-blue);
+      border-radius: 0 0 8px 8px;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: #b6d4fe;
+      box-shadow: 0 20px 25px -14px rgba(11, 94, 215, 0.12);
+    }
+
+    .service-icon {
+      background: var(--brand-light-blue);
+      width: 76px;
+      height: 76px;
+      border-radius: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--brand-blue);
+      font-size: 2.2rem;
+      transition: all 0.2s;
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--brand-blue);
+      color: white;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: var(--brand-dark);
+    }
+
+    .service-card p {
+      color: #4b5f73;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .service-features {
+      list-style: none;
+      text-align: left;
+      width: 100%;
+      margin-top: 0.25rem;
+    }
+
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-size: 0.85rem;
+      color: #1e2f45;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-features i {
+      color: var(--brand-blue);
+      font-size: 0.85rem;
+      width: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ------ Why choose us ------ */
+    .why-choose {
+      background: #f9fcff;
+      border-radius: 28px;
+      padding: 2rem 1.5rem;
+      margin: 1.5rem 0 0.5rem;
+      border: 1px solid #e9eef3;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.75rem;
+      align-items: center;
+      text-align: center;
+    }
+
+    .why-choose h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--brand-dark);
+      line-height: 1.25;
+    }
+
+    .why-choose h3 span { color: var(--brand-blue); }
+
+    .why-choose p {
+      color: #4b5f73;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .check-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      text-align: left;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 500;
+      color: #0b1c2e;
+      font-size: 0.95rem;
+    }
+
+    .check-item i {
+      color: var(--brand-blue);
+      font-size: 1.2rem;
+      background: white;
+      border-radius: 50%;
+      padding: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    /* ------ Inventory grid ------ */
+    .inventory-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .inventory-card.hidden-card { display: none; }
+
+    .inventory-card {
+      background: white;
+      border-radius: 22px;
+      padding: 1.5rem;
+      border: 1px solid #e9eef3;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+      cursor: pointer;
+      position: relative;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .inventory-card:hover,
+    .inventory-card:focus-visible {
+      box-shadow: 0 16px 25px -12px rgba(11, 94, 215, 0.18);
+      border-color: #b6d4fe;
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .inventory-card:active {
+      transform: translateY(-1px) scale(0.995);
+    }
+
+    .inventory-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90px;
+      margin-bottom: 1rem;
+      pointer-events: none;
+    }
+
+    .inventory-img i {
+      font-size: 3.2rem;
+      color: #1e3a5f;
+      opacity: 0.9;
+    }
+
+    .grade-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--brand-blue);
+      background: var(--brand-light-blue);
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 0.7rem;
+      align-self: flex-start;
+      pointer-events: none;
+    }
+
+    .inventory-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--brand-dark);
+      pointer-events: none;
+    }
+
+    .tap-to-see {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--brand-blue);
+      background: var(--brand-light-blue);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      margin-top: 0.75rem;
+      align-self: flex-start;
+      transition: background 0.2s, color 0.2s;
+      font-family: inherit;
+      pointer-events: none;
+    }
+
+    .inventory-card:hover .tap-to-see {
+      background: var(--brand-blue);
+      color: white;
+    }
+
+    .tap-to-see i { font-size: 0.7rem; }
+
+    /* ------ View All button ------ */
+    .view-all-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 2.5rem;
+    }
+
+    .view-all-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--brand-blue);
+      color: white;
+      padding: 0.95rem 2.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 10px 20px -8px rgba(11, 94, 215, 0.4);
+      font-family: inherit;
+    }
+
+    .view-all-btn:hover,
+    .view-all-btn:active {
+      background: #0a4fc0;
+      transform: translateY(-2px);
+    }
+
+    .view-all-btn i {
+      font-size: 0.85rem;
+      transition: transform 0.3s ease;
+    }
+
+    .view-all-btn.expanded i { transform: rotate(180deg); }
+
+    .inventory-count {
+      display: block;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    /* ------ MODAL (with enhanced image area) ------ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(11, 28, 46, 0.65);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 200;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal {
+      background: #ffffff;
+      border-radius: 26px;
+      max-width: 620px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      box-shadow: 0 30px 60px -20px rgba(11, 28, 46, 0.4);
+      transform: translateY(20px) scale(0.98);
+      transition: transform 0.3s ease;
+      position: relative;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .modal-overlay.open .modal {
+      transform: translateY(0) scale(1);
+    }
+
+    /* Enhanced modal header with larger image */
+    .modal-header {
+      background: linear-gradient(135deg, #0b1c2e 0%, #1e3a5f 100%);
+      color: white;
+      padding: 0;
+      border-radius: 26px 26px 0 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 5;
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-close:hover,
+    .modal-close:active {
+      background: rgba(255, 255, 255, 0.35);
+      transform: rotate(90deg);
+    }
+
+    /* Big product image stage */
+    .modal-image-stage {
+      position: relative;
+      background: radial-gradient(circle at 50% 40%, #f0f7ff 0%, #e2eefc 60%, #d4e6fb 100%);
+      padding: 2.5rem 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+      cursor: zoom-in;
+      transition: background 0.3s;
+      overflow: hidden;
+    }
+
+    .modal-image-stage:hover {
+      background: radial-gradient(circle at 50% 40%, #e8f2ff 0%, #d8e9fc 60%, #c8e0fa 100%);
+    }
+
+    /* Decorative glow ring */
+    .modal-image-stage::before {
+      content: '';
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(11, 94, 215, 0.18) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .modal-image-stage .big-icon {
+      font-size: 7rem;
+      color: #1e3a5f;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 12px 20px rgba(11, 94, 215, 0.25));
+      transition: transform 0.35s ease;
+    }
+
+    .modal-image-stage:hover .big-icon {
+      transform: scale(1.06) translateY(-3px);
+    }
+
+    /* Zoom hint chip */
+    .zoom-hint {
+      position: absolute;
+      bottom: 0.85rem;
+      right: 0.85rem;
+      background: rgba(11, 28, 46, 0.82);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.4rem 0.85rem;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 3;
+      backdrop-filter: blur(4px);
+      pointer-events: none;
+      letter-spacing: 0.02em;
+    }
+
+    .zoom-hint i { font-size: 0.7rem; }
+
+    /* Grade badge on the image */
+    .modal-grade-tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: white;
+      background: var(--brand-blue);
+      padding: 0.35rem 0.9rem;
+      border-radius: 50px;
+      z-index: 3;
+      box-shadow: 0 6px 14px -4px rgba(11, 94, 215, 0.5);
+    }
+
+    /* Model title block */
+    .modal-title-block {
+      text-align: center;
+      padding: 1.5rem 1.5rem 1.5rem;
+      background: linear-gradient(105deg, #0b1c2e 0%, #1e3a5f 100%);
+      color: white;
+    }
+
+    .modal-title-block h3 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+      line-height: 1.25;
+    }
+
+    .modal-title-block p {
+      font-size: 0.85rem;
+      color: #b9d1e8;
+      font-weight: 500;
+    }
+
+    .modal-body {
+      padding: 1.75rem 1.5rem 2rem;
+    }
+
+    .modal-specs {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid #e9eef3;
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.9rem 1.1rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #f1f5f9;
+      background: #ffffff;
+    }
+
+    .spec-row:last-child { border-bottom: none; }
+
+    .spec-row i {
+      color: var(--brand-blue);
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    .spec-row .spec-label {
+      font-weight: 600;
+      color: #64748b;
+      min-width: 90px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .spec-row .spec-value {
+      color: var(--brand-dark);
+      font-weight: 500;
+      flex: 1;
+    }
+
+    .modal-note {
+      background: var(--brand-light-blue);
+      border-radius: 16px;
+      padding: 1.1rem 1.25rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-note i {
+      color: var(--brand-blue);
+      font-size: 1.1rem;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    .modal-note p {
+      font-size: 0.85rem;
+      color: #1e3a5f;
+      line-height: 1.55;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .modal-actions .btn-primary,
+    .modal-actions .btn-outline {
+      width: 100%;
+      flex: none;
+    }
+
+    /* ---------- LIGHTBOX (full image view) ---------- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 15, 28, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 300;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      padding: 1.5rem;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: white;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+      z-index: 5;
+      backdrop-filter: blur(6px);
+    }
+
+    .lightbox-close:hover,
+    .lightbox-close:active {
+      background: rgba(255, 255, 255, 0.28);
+      transform: rotate(90deg);
+    }
+
+    .lightbox-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 620px;
+      width: 100%;
+      transform: scale(0.92);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .lightbox.open .lightbox-content {
+      transform: scale(1);
+    }
+
+    .lightbox-image-stage {
+      position: relative;
+      background: radial-gradient(circle at 50% 45%, #ffffff 0%, #eaf3ff 55%, #d7e8fd 100%);
+      border-radius: 32px;
+      width: 100%;
+      padding: 4rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      overflow: hidden;
+    }
+
+    .lightbox-image-stage::before {
+      content: '';
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(11, 94, 215, 0.2) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .lightbox-image-stage .big-icon {
+      font-size: 12rem;
+      color: #1e3a5f;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 20px 35px rgba(11, 94, 215, 0.35));
+      animation: floatIcon 4s ease-in-out infinite;
+    }
+
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .lightbox-caption {
+      color: white;
+      text-align: center;
+    }
+
+    .lightbox-caption h4 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .lightbox-caption p {
+      color: #b9d1e8;
+      font-size: 0.88rem;
+    }
+
+    .lightbox-zoom-controls {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+
+    .lightbox-zoom-controls button {
+      width: 48px;
+      height: 48px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: white;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s, transform 0.15s;
+      backdrop-filter: blur(6px);
+    }
+
+    .lightbox-zoom-controls button:hover,
+    .lightbox-zoom-controls button:active {
+      background: var(--brand-blue);
+      transform: translateY(-2px);
+    }
+
+    .lightbox-hint {
+      color: #94a3b8;
+      font-size: 0.78rem;
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ------ Parts grid ------ */
+    .parts-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .part-card {
+      background: white;
+      border-radius: 18px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border: 1px solid #e9eef3;
+      transition: all 0.2s;
+    }
+
+    .part-card:hover,
+    .part-card:active {
+      border-color: #b6d4fe;
+      background: #f9fcff;
+    }
+
+    .part-card i {
+      font-size: 2rem;
+      color: var(--brand-blue);
+      margin-bottom: 0.7rem;
+    }
+
+    .part-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+      color: var(--brand-dark);
+    }
+
+    .part-card p {
+      font-size: 0.75rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* ------ Contact section ------ */
+    .contact-section {
+      padding: 3rem 0;
+      background: #f9fcff;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+    }
+
+    .contact-info {
+      background: white;
+      border-radius: 26px;
+      padding: 2rem 1.5rem;
+      border: 1px solid #e9eef3;
+      box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-info h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .contact-info .proprietor {
+      font-size: 0.9rem;
+      color: var(--brand-blue);
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid var(--brand-light-blue);
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-detail i {
+      width: 40px;
+      height: 40px;
+      background: var(--brand-light-blue);
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-blue);
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-detail .label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-detail .value {
+      font-size: 0.95rem;
+      color: var(--brand-dark);
+      font-weight: 500;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-detail .value:hover,
+    .contact-detail .value:active { color: var(--brand-blue); }
+
+    .contact-cta-box {
+      background: linear-gradient(105deg, #0b1c2e 0%, #1e3a5f 100%);
+      border-radius: 26px;
+      padding: 2rem 1.5rem;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-cta-box h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 0.9rem;
+    }
+
+    .contact-cta-box p {
+      color: #b9d1e8;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-cta-box .btn-primary {
+      background: white;
+      color: var(--brand-dark);
+      box-shadow: none;
+      align-self: stretch;
+    }
+
+    .contact-cta-box .btn-primary:hover,
+    .contact-cta-box .btn-primary:active {
+      background: #e9f2ff;
+      color: var(--brand-dark);
+    }
+
+    /* ------ Footer ------ */
+    footer {
+      background: white;
+      border-top: 1px solid #e9eef3;
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    .footer-centered {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.25rem;
+      padding: 0 1rem;
+    }
+
+    .footer-centered .logo { justify-content: center; }
+
+    .footer-centered p {
+      color: #4b5f73;
+      max-width: 480px;
+      font-size: 0.9rem;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.1rem;
+      color: #4b5f73;
+      margin-top: 0.25rem;
+    }
+
+    .social-icons a {
+      color: inherit;
+      transition: color 0.2s, transform 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--brand-light-blue);
+      border-radius: 14px;
+    }
+
+    .social-icons a:hover,
+    .social-icons a:active {
+      color: white;
+      background: var(--brand-blue);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      padding: 2rem 1rem 0;
+      margin-top: 2rem;
+      border-top: 1px solid #e9eef3;
+      color: #6b7e93;
+      font-size: 0.8rem;
+    }
+
+    /* ------ Small mobile tweaks ------ */
+    @media (max-width: 380px) {
+      .logo-text .main { font-size: 1.05rem; }
+      .logo-text .sub { font-size: 0.55rem; }
+      .logo-icon { width: 38px; height: 38px; font-size: 1.3rem; }
+      .hero-content h1 { font-size: 1.75rem; }
+      .section-header h2 { font-size: 1.55rem; }
+      .modal-title-block h3 { font-size: 1.15rem; }
+      .spec-row .spec-label { min-width: 70px; font-size: 0.75rem; }
+      .modal-image-stage .big-icon { font-size: 5.5rem; }
+      .modal-image-stage { min-height: 190px; padding: 2rem 1rem 1.75rem; }
+      .lightbox-image-stage .big-icon { font-size: 8rem; }
+      .lightbox-image-stage { padding: 3rem 1.5rem; }
+    }
+
+    /* ------ Tablet (≥ 640px) ------ */
+    @media (min-width: 640px) {
+      .container { padding: 0 1.5rem; }
+      .hero { padding: 3rem 0 3.5rem; }
+      .hero-grid { gap: 2.5rem; }
+      .hero-content { text-align: center; }
+      .hero-content h1 { font-size: 2.6rem; }
+      .hero-subhead { margin-left: auto; margin-right: auto; }
+      .hero-badge { align-self: center; }
+      .hero-buttons { justify-content: center; }
+      .btn-primary, .btn-outline { flex: 0 0 auto; }
+      .slogan-bar { font-size: 0.85rem; letter-spacing: 0.15em; padding: 0.9rem 0; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .inventory-grid { grid-template-columns: repeat(2, 1fr); }
+      .parts-grid { grid-template-columns: repeat(3, 1fr); }
+      .check-list { grid-template-columns: 1fr 1fr; }
+      .why-choose { text-align: center; }
+      .modal-actions { flex-direction: row; }
+      .modal-actions .btn-primary,
+      .modal-actions .btn-outline { flex: 1; }
+      .modal-image-stage { min-height: 280px; }
+      .modal-image-stage .big-icon { font-size: 8rem; }
+    }
+
+    /* ------ Desktop (≥ 1024px) ------ */
+    @media (min-width: 1024px) {
+      .navbar { flex-wrap: nowrap; padding: 1rem 0; }
+      .hero { padding: 3rem 0 4rem; }
+      .hero-grid { grid-template-columns: 1.1fr 1fr; gap: 3rem; }
+      .hero-content { text-align: left; }
+      .hero-content h1 { font-size: 2.9rem; }
+      .hero-subhead { margin-left: 0; margin-right: 0; }
+      .hero-badge { align-self: flex-start; }
+      .hero-buttons { justify-content: flex-start; }
+      .slogan-bar {
+        font-size: 1rem;
+        letter-spacing: 0.15em;
+        padding: 0.9rem 0;
+        border-radius: 0 0 40px 40px;
+        margin-top: 2rem;
+      }
+      .section { padding: 4.5rem 0; }
+      .section-header h2 { font-size: 2.2rem; }
+      .service-grid { grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+      .service-card { padding: 2.5rem 2rem; }
+      .service-icon { width: 88px; height: 88px; border-radius: 30px; font-size: 2.6rem; }
+      .why-choose {
+        grid-template-columns: 1fr 1.2fr;
+        text-align: left;
+        padding: 3.5rem 3rem;
+        border-radius: 40px;
+        gap: 3rem;
+      }
+      .why-choose h3 { font-size: 2rem; }
+      .inventory-grid { grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+      .inventory-card { padding: 1.8rem 1.8rem 2rem; }
+      .inventory-img { height: 120px; }
+      .inventory-img i { font-size: 4rem; }
+      .inventory-card h4 { font-size: 1.15rem; }
+      .parts-grid { grid-template-columns: repeat(6, 1fr); gap: 1.5rem; }
+      .part-card i { font-size: 2.4rem; }
+      .contact-section { padding: 5rem 0; }
+      .contact-wrapper { grid-template-columns: 1fr 1.2fr; gap: 3rem; }
+      .contact-info { padding: 2.5rem 2rem; border-radius: 32px; }
+      .contact-info h3 { font-size: 1.6rem; }
+      .contact-cta-box { padding: 2.5rem 2rem; border-radius: 32px; }
+      .contact-cta-box h3 { font-size: 1.6rem; }
+      .contact-cta-box .btn-primary { align-self: flex-start; }
+      footer { padding: 3.5rem 0 2rem; }
+      .modal-image-stage { min-height: 320px; }
+      .modal-image-stage .big-icon { font-size: 9rem; }
+      .lightbox-image-stage .big-icon { font-size: 14rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo" aria-label="MonologicTech Solutions home">
+        <div class="logo-icon">M</div>
+        <div class="logo-text">
+          <div class="main">Monologic<span>Tech</span></div>
+          <div class="sub">Solutions</div>
+          <div class="tagline-small">Devices Today | Better Tomorrow</div>
+        </div>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#inventory">Refurbished</a>
+        <a href="#repair">Repairs</a>
+        <a href="#parts">Parts &amp; Accessories</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a href="#contact" class="cta-nav">
+        <i class="fas fa-phone-alt"></i> Contact
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-badge"><i class="fas fa-check-circle" style="margin-right: 6px;"></i>Trusted since 2018</span>
+          <h1>
+            Reliable Laptops.
+            <span class="highlight">Brighter Possibilities.</span>
+          </h1>
+          <div class="hero-subhead">
+            Your Laptop · Our Support · A Smarter Tomorrow
+          </div>
+          <div class="hero-buttons">
+            <a href="#services" class="btn-primary">
+              <i class="fas fa-tools"></i> Our services
+            </a>
+            <a href="#inventory" class="btn-outline">
+              <i class="fas fa-laptop"></i> View refurbished
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <svg width="480" height="340" viewBox="0 0 480 340" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration of laptops">
+            <rect width="480" height="340" rx="28" fill="#F0F7FF"/>
+            <rect x="160" y="110" width="180" height="110" rx="8" fill="#1E3A5F"/>
+            <rect x="170" y="120" width="160" height="80" rx="4" fill="#0B5ED7" opacity="0.85"/>
+            <rect x="185" y="135" width="80" height="6" rx="3" fill="#FFFFFF" opacity="0.9"/>
+            <rect x="185" y="150" width="110" height="6" rx="3" fill="#FFFFFF" opacity="0.6"/>
+            <rect x="185" y="165" width="70" height="6" rx="3" fill="#FFFFFF" opacity="0.4"/>
+            <rect x="50" y="140" width="130" height="80" rx="8" fill="#2C3E50"/>
+            <rect x="58" y="148" width="114" height="56" rx="4" fill="#0B5ED7" opacity="0.5"/>
+            <circle cx="115" cy="176" r="10" fill="#FFFFFF" opacity="0.3"/>
+            <rect x="330" y="130" width="120" height="80" rx="8" fill="#1E3A5F"/>
+            <rect x="338" y="138" width="104" height="56" rx="4" fill="#0B5ED7" opacity="0.5"/>
+            <circle cx="390" cy="166" r="10" fill="#FFFFFF" opacity="0.3"/>
+            <text x="115" y="230" font-family="Arial" font-size="12" fill="#64748B" font-weight="600">DELL</text>
+            <text x="385" y="225" font-family="Arial" font-size="12" fill="#64748B" font-weight="600">Lenovo</text>
+            <text x="220" y="235" font-family="Arial" font-size="12" fill="#64748B" font-weight="600">hp</text>
+            <path d="M30 280 L450 280" stroke="#CFE2FF" stroke-width="2" stroke-dasharray="6 6"/>
+          </svg>
+        </div>
+      </div>
+      <div class="container slogan-bar">
+        <span>BUY</span> <span>|</span> <span>REPAIR</span> <span>|</span> <span>UPGRADE</span> <span>|</span> <span>STAY CONNECTED</span>
+      </div>
+    </section>
+
+    <!-- Services section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>What we do best</h2>
+          <p>Three core services, one trusted partner for all your laptop needs.</p>
+        </div>
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-sync-alt"></i></div>
+            <h3>Refurbished Laptops</h3>
+            <p>Quality devices at better value. Professionally restored and certified for performance.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> 60‑point quality check</li>
+              <li><i class="fas fa-check-circle"></i> 6‑month warranty included</li>
+              <li><i class="fas fa-check-circle"></i> Up to 50% off new prices</li>
+            </ul>
+          </div>
+          <div class="service-card" id="repair">
+            <div class="service-icon"><i class="fas fa-tools"></i></div>
+            <h3>Laptop Repair</h3>
+            <p>Hardware &amp; software expert support for every major brand — Dell, HP, Lenovo, Asus, Acer, and more.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> Free diagnosis &amp; quote</li>
+              <li><i class="fas fa-check-circle"></i> 48‑hour turnaround</li>
+              <li><i class="fas fa-check-circle"></i> Genuine parts only</li>
+            </ul>
+          </div>
+          <div class="service-card" id="parts">
+            <div class="service-icon"><i class="fas fa-cog"></i></div>
+            <h3>Accessories</h3>
+            <p>Chargers, batteries, parts &amp; more. Everything to keep your laptop running smoothly.</p>
+            <ul class="service-features">
+              <li><i class="fas fa-check-circle"></i> OEM &amp; compatible options</li>
+              <li><i class="fas fa-check-circle"></i> Competitive prices</li>
+              <li><i class="fas fa-check-circle"></i> Expert fitment advice</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us -->
+    <div class="container">
+      <div class="why-choose">
+        <div>
+          <h3>Your Laptop <span>Our Support</span> A Smarter Tomorrow</h3>
+          <p>We combine technical expertise with a customer‑first approach. Every device we sell or repair is backed by our commitment to quality.</p>
+        </div>
+        <div class="check-list">
+          <div class="check-item"><i class="fas fa-check-circle"></i> Genuine Products</div>
+          <div class="check-item"><i class="fas fa-check-circle"></i> Affordable Pricing</div>
+          <div class="check-item"><i class="fas fa-check-circle"></i> Skilled Technicians</div>
+          <div class="check-item"><i class="fas fa-check-circle"></i> Quick Turnaround</div>
+          <div class="check-item"><i class="fas fa-check-circle"></i> Customer Satisfaction</div>
+          <div class="check-item"><i class="fas fa-check-circle"></i> 6‑Month Warranty</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Available refurbished inventory -->
+    <section class="section" id="inventory">
+      <div class="container">
+        <div class="section-header">
+          <h2>Available refurbished laptops</h2>
+          <p>Tap any laptop below to see its full specifications and high‑resolution image.</p>
+        </div>
+        <div class="inventory-grid" id="inventoryGrid">
+
+          <!-- Card 1 -->
+          <div class="inventory-card" tabindex="0" role="button" aria-label="View details for Dell Latitude 7420"
+               data-model="Dell Latitude 7420" data-grade="Grade A" data-icon="fa-laptop"
+               data-cpu="Intel Core i7‑1185G7 (11th Gen)" data-ram="16 GB DDR4"
+               data-storage="512 GB NVMe SSD" data-display="14 inch Full HD (1920×1080)"
+               data-graphics="Intel Iris Xe" data-condition="Grade A — minor cosmetic wear, fully functional"
+               data-includes="Original charger, 6‑month warranty"
+               data-note="This unit has been professionally refurbished and passes our 60‑point quality check.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade A</span>
+            <h4>Dell Latitude 7420</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="inventory-card" tabindex="0" role="button" aria-label="View details for HP Spectre x360 14"
+               data-model="HP Spectre x360 14" data-grade="Grade A+" data-icon="fa-laptop"
+               data-cpu="Intel Core i7‑1255U (12th Gen)" data-ram="16 GB LPDDR4x"
+               data-storage="1 TB NVMe SSD" data-display="13.5 inch OLED Touch, 3000×2000"
+               data-graphics="Intel Iris Xe" data-condition="Grade A+ — like‑new, minimal signs of use"
+               data-includes="Stylus, original charger, 6‑month warranty"
+               data-note="Premium convertible with vibrant OLED display — perfect for creators and professionals.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade A+</span>
+            <h4>HP Spectre x360 14</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="inventory-card" tabindex="0" role="button" aria-label="View details for Lenovo ThinkPad T14"
+               data-model="Lenovo ThinkPad T14" data-grade="Grade B" data-icon="fa-laptop"
+               data-cpu="AMD Ryzen 5 PRO 4650U" data-ram="16 GB DDR4"
+               data-storage="512 GB NVMe SSD" data-display="14 inch Full HD (1920×1080)"
+               data-graphics="AMD Radeon" data-condition="Grade B — visible scuffs, screen and keyboard perfect"
+               data-includes="Compatible charger, 6‑month warranty"
+               data-note="Legendary ThinkPad reliability with excellent keyboard and battery life.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade B</span>
+            <h4>Lenovo ThinkPad T14</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="inventory-card" tabindex="0" role="button" aria-label="View details for HP EliteBook 840 G8"
+               data-model="HP EliteBook 840 G8" data-grade="Grade A" data-icon="fa-laptop"
+               data-cpu="Intel Core i5‑1135G7 (11th Gen)" data-ram="16 GB DDR4"
+               data-storage="256 GB NVMe SSD" data-display="14 inch Full HD (1920×1080)"
+               data-graphics="Intel Iris Xe" data-condition="Grade A — minor cosmetic wear, fully functional"
+               data-includes="Original charger, 6‑month warranty"
+               data-note="Business‑class security and durability in a slim, professional chassis.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade A</span>
+            <h4>HP EliteBook 840 G8</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="inventory-card" tabindex="0" role="button" aria-label="View details for Asus ZenBook 14"
+               data-model="Asus ZenBook 14" data-grade="Grade A" data-icon="fa-laptop"
+               data-cpu="Intel Core i5‑1240P (12th Gen)" data-ram="8 GB LPDDR5"
+               data-storage="512 GB NVMe SSD" data-display="14 inch OLED, 2880×1800"
+               data-graphics="Intel Iris Xe" data-condition="Grade A — minor cosmetic wear, fully functional"
+               data-includes="Sleeve, original charger, 6‑month warranty"
+               data-note="Ultra‑portable with a stunning OLED display — ideal for on‑the‑go productivity.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade A</span>
+            <h4>Asus ZenBook 14</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="inventory-card" tabindex="0" role="button" aria-label="View details for Acer Aspire 5"
+               data-model="Acer Aspire 5" data-grade="Grade B" data-icon="fa-laptop"
+               data-cpu="AMD Ryzen 5 5500U" data-ram="8 GB DDR4"
+               data-storage="256 GB NVMe SSD" data-display="15.6 inch Full HD (1920×1080)"
+               data-graphics="AMD Radeon" data-condition="Grade B — visible scuffs, screen and keyboard perfect"
+               data-includes="Compatible charger, 6‑month warranty"
+               data-note="Reliable everyday performer with a large screen and comfortable keyboard.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade B</span>
+            <h4>Acer Aspire 5</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <!-- HIDDEN CARDS -->
+          <div class="inventory-card hidden-card" tabindex="0" role="button" aria-label="View details for Lenovo IdeaPad Slim 5"
+               data-model="Lenovo IdeaPad Slim 5" data-grade="Grade A" data-icon="fa-laptop"
+               data-cpu="AMD Ryzen 7 5700U" data-ram="16 GB DDR4"
+               data-storage="512 GB NVMe SSD" data-display="15.6 inch Full HD IPS (1920×1080)"
+               data-graphics="AMD Radeon" data-condition="Grade A — minor cosmetic wear, fully functional"
+               data-includes="Original charger, 6‑month warranty"
+               data-note="Slim, stylish and powerful — a great all‑rounder for work and study.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade A</span>
+            <h4>Lenovo IdeaPad Slim 5</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <div class="inventory-card hidden-card" tabindex="0" role="button" aria-label="View details for Dell XPS 13 9310"
+               data-model="Dell XPS 13 9310" data-grade="Grade A+" data-icon="fa-laptop"
+               data-cpu="Intel Core i7‑1185G7 (11th Gen)" data-ram="16 GB LPDDR4x"
+               data-storage="512 GB NVMe SSD" data-display="13.4 inch FHD+ InfinityEdge (1920×1200)"
+               data-graphics="Intel Iris Xe" data-condition="Grade A+ — like‑new, minimal signs of use"
+               data-includes="Original charger, USB‑C adapter, 6‑month warranty"
+               data-note="Flagship ultrabook with a stunning edge‑to‑edge display and premium build.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade A+</span>
+            <h4>Dell XPS 13 9310</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <div class="inventory-card hidden-card" tabindex="0" role="button" aria-label="View details for HP Pavilion 15"
+               data-model="HP Pavilion 15" data-grade="Grade B" data-icon="fa-laptop"
+               data-cpu="Intel Core i5‑1135G7 (11th Gen)" data-ram="8 GB DDR4"
+               data-storage="512 GB NVMe SSD" data-display="15.6 inch Full HD (1920×1080)"
+               data-graphics="Intel Iris Xe" data-condition="Grade B — visible scuffs, screen and keyboard perfect"
+               data-includes="Compatible charger, 6‑month warranty"
+               data-note="Dependable home and office laptop with a comfortable full‑size keyboard.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade B</span>
+            <h4>HP Pavilion 15</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+          <div class="inventory-card hidden-card" tabindex="0" role="button" aria-label="View details for Asus VivoBook 15"
+               data-model="Asus VivoBook 15" data-grade="Grade A" data-icon="fa-laptop"
+               data-cpu="Intel Core i3‑1115G4 (11th Gen)" data-ram="8 GB DDR4"
+               data-storage="256 GB NVMe SSD" data-display="15.6 inch Full HD (1920×1080)"
+               data-graphics="Intel UHD" data-condition="Grade A — minor cosmetic wear, fully functional"
+               data-includes="Original charger, 6‑month warranty"
+               data-note="Affordable everyday laptop — great for browsing, office work and streaming.">
+            <div class="inventory-img"><i class="fas fa-laptop"></i></div>
+            <span class="grade-badge">Grade A</span>
+            <h4>Asus VivoBook 15</h4>
+            <button class="tap-to-see" type="button"><i class="fas fa-hand-pointer"></i> Tap to see</button>
+          </div>
+
+        </div>
+
+        <div class="view-all-wrap">
+          <button class="view-all-btn" id="viewAllBtn" type="button" aria-expanded="false">
+            <span id="viewAllText">View All Laptops</span>
+            <i class="fas fa-chevron-down" id="viewAllIcon"></i>
+          </button>
+        </div>
+        <span class="inventory-count" id="inventoryCount">Showing 6 of 10 laptops</span>
+      </div>
+    </section>
+
+    <!-- Repair + Parts & Accessories -->
+    <section class="section" style="background: #f9fcff; border-radius: 28px 28px 0 0;">
+      <div class="container">
+        <div class="section-header">
+          <h2>We repair every major brand</h2>
+          <p>Certified technicians, genuine parts, and a repair warranty you can count on.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem 2rem; margin-bottom: 3rem;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: #2c3e50; font-weight: 500; font-size: 0.8rem;"><i class="fab fa-dell" style="font-size: 2.2rem; color: #1e3a5f;"></i> <span>Dell</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: #2c3e50; font-weight: 500; font-size: 0.8rem;"><i class="fab fa-hp" style="font-size: 2.2rem; color: #1e3a5f;"></i> <span>HP</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: #2c3e50; font-weight: 500; font-size: 0.8rem;"><i class="fab fa-lenovo" style="font-size: 2.2rem; color: #1e3a5f;"></i> <span>Lenovo</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: #2c3e50; font-weight: 500; font-size: 0.8rem;"><i class="fas fa-laptop" style="font-size: 2.2rem; color: #1e3a5f;"></i> <span>Asus</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: #2c3e50; font-weight: 500; font-size: 0.8rem;"><i class="fas fa-laptop" style="font-size: 2.2rem; color: #1e3a5f;"></i> <span>Acer</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: #2c3e50; font-weight: 500; font-size: 0.8rem;"><i class="fas fa-microchip" style="font-size: 2.2rem; color: #1e3a5f;"></i> <span>MSI</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.3rem; color: #2c3e50; font-weight: 500; font-size: 0.8rem;"><i class="fas fa-laptop" style="font-size: 2.2rem; color: #1e3a5f;"></i> <span>Samsung</span></div>
+        </div>
+
+        <div class="section-header" style="margin-bottom: 1.5rem;">
+          <h2>Parts &amp; accessories we stock</h2>
+          <p>From batteries to chargers — everything to keep your laptop running.</p>
+        </div>
+        <div class="parts-grid">
+          <div class="part-card"><i class="fas fa-battery-full"></i><h4>Batteries</h4><p>OEM &amp; high‑capacity replacements</p></div>
+          <div class="part-card"><i class="fas fa-tv"></i><h4>Screens</h4><p>FHD, OLED, touch panels</p></div>
+          <div class="part-card"><i class="fas fa-keyboard"></i><h4>Keyboards</h4><p>Backlit &amp; standard layouts</p></div>
+          <div class="part-card"><i class="fas fa-plug"></i><h4>Chargers</h4><p>Original &amp; compatible adapters</p></div>
+          <div class="part-card"><i class="fas fa-memory"></i><h4>RAM &amp; SSD</h4><p>DDR4, DDR5, NVMe upgrades</p></div>
+          <div class="part-card"><i class="fas fa-fan"></i><h4>Cooling &amp; more</h4><p>Fans, thermal paste, hinges</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2>Get in touch</h2>
+          <p>Reach out for a free consultation, repair quote, or to ask about our refurbished stock.</p>
+        </div>
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <h3>Amarpreet Singh Cheeta</h3>
+            <div class="proprietor">Proprietor · MonologicTech Solutions</div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div><div class="label">Phone</div><a href="tel:+919137876078" class="value">+91 91378 76078</a></div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <div><div class="label">Email</div><a href="mailto:info@monologitech.com" class="value">info@monologitech.com</a></div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-globe"></i>
+              <div><div class="label">Website</div><a href="https://www.monologitech.com" target="_blank" rel="noopener" class="value">www.monologitech.com</a></div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-map-marker-alt"></i>
+              <div><div class="label">Location</div><span class="value">India</span></div>
+            </div>
+          </div>
+          <div class="contact-cta-box">
+            <h3>Ready to give your laptop a second life?</h3>
+            <p>Whether you need a reliable refurbished machine or expert repair, we're just a call or email away. Free consultations, honest advice, and quality workmanship guaranteed.</p>
+            <a href="mailto:info@monologitech.com" class="btn-primary"><i class="fas fa-envelope"></i> Send an email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-centered">
+      <div class="logo">
+        <div class="logo-icon" style="width:38px; height:38px; font-size:1.3rem;">M</div>
+        <div class="logo-text">
+          <div class="main" style="font-size:1.15rem;">Monologic<span>Tech</span></div>
+          <div class="sub" style="font-size:0.55rem;">Solutions</div>
+        </div>
+      </div>
+      <p>Refurbished laptops, expert repairs, and genuine parts. Giving technology a second life since 2018.</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>© 2025 MonologicTech Solutions. All rights reserved. · Quality Devices. Trusted Service.</p>
+    </div>
+  </footer>
+
+  <!-- ============ PRODUCT MODAL (with enhanced image) ============ -->
+  <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal" role="document">
+      <div class="modal-header">
+        <button class="modal-close" id="modalClose" aria-label="Close details">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <!-- Big product image stage (click to zoom) -->
+        <div class="modal-image-stage" id="modalImageStage" title="Click to view full image">
+          <span class="modal-grade-tag" id="modalGradeTag">Grade A</span>
+          <i class="fas fa-laptop big-icon" id="modalIcon"></i>
+          <span class="zoom-hint"><i class="fas fa-expand"></i> Tap to zoom</span>
+        </div>
+
+        <!-- Model title block -->
+        <div class="modal-title-block">
+          <h3 id="modalTitle">Laptop Model</h3>
+          <p id="modalSubtitle">Refurbished · Certified · Warranty included</p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-specs" id="modalSpecs"></div>
+        <div class="modal-note" id="modalNote">
+          <i class="fas fa-circle-info"></i>
+          <p id="modalNoteText">This unit has been professionally refurbished and passes our 60‑point quality check.</p>
+        </div>
+        <div class="modal-actions">
+          <a href="mailto:info@monologitech.com?subject=Enquiry%20about%20refurbished%20laptop" class="btn-primary" id="modalEnquire">
+            <i class="fas fa-envelope"></i> Enquire about this model
+          </a>
+          <button class="btn-outline" id="modalCloseBtn" type="button">
+            <i class="fas fa-arrow-left"></i> Back to list
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ LIGHTBOX (full image view) ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full image view" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close full image">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="lightbox-content">
+      <div class="lightbox-image-stage">
+        <i class="fas fa-laptop big-icon" id="lightboxIcon"></i>
+      </div>
+      <div class="lightbox-caption">
+        <h4 id="lightboxTitle">Laptop Model</h4>
+        <p id="lightboxSubtitle">Grade A · Refurbished</p>
+        <div class="lightbox-zoom-controls">
+          <button id="zoomOut" aria-label="Zoom out"><i class="fas fa-search-minus"></i></button>
+          <button id="zoomReset" aria-label="Reset zoom"><i class="fas fa-compress"></i></button>
+          <button id="zoomIn" aria-label="Zoom in"><i class="fas fa-search-plus"></i></button>
+        </div>
+        <p class="lightbox-hint"><i class="fas fa-info-circle"></i> Use controls or pinch to zoom</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      /* ---------- Mobile nav toggle ---------- */
+      var navToggle = document.getElementById('navToggle');
+      var navLinks = document.getElementById('navLinks');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+          var isOpen = navLinks.classList.toggle('open');
+          navToggle.classList.toggle('open', isOpen);
+          navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        navLinks.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            if (navLinks.classList.contains('open')) {
+              navLinks.classList.remove('open');
+              navToggle.classList.remove('open');
+              navToggle.setAttribute('aria-expanded', 'false');
+            }
+          });
+        });
+
+        document.addEventListener('click', function(e) {
+          if (navLinks.classList.contains('open')) {
+            if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+              navLinks.classList.remove('open');
+              navToggle.classList.remove('open');
+              navToggle.setAttribute('aria-expanded', 'false');
+            }
+          }
+        });
+
+        window.addEventListener('resize', function() {
+          if (window.innerWidth >= 1024) {
+            navLinks.classList.remove('open');
+            navToggle.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      /* ---------- View All / Show Less ---------- */
+      var viewAllBtn = document.getElementById('viewAllBtn');
+      var viewAllText = document.getElementById('viewAllText');
+      var hiddenCards = document.querySelectorAll('.inventory-card.hidden-card');
+      var inventoryCount = document.getElementById('inventoryCount');
+      var allCards = document.querySelectorAll('.inventory-card');
+      var totalCards = allCards.length;
+      var visibleCount = totalCards - hiddenCards.length;
+      var isExpanded = false;
+
+      function updateCount() {
+        if (isExpanded) {
+          inventoryCount.textContent = 'Showing all ' + totalCards + ' laptops';
+        } else {
+          inventoryCount.textContent = 'Showing ' + visibleCount + ' of ' + totalCards + ' laptops';
+        }
+      }
+
+      if (viewAllBtn && hiddenCards.length > 0) {
+        viewAllBtn.addEventListener('click', function() {
+          isExpanded = !isExpanded;
+          hiddenCards.forEach(function(card) {
+            card.classList.toggle('hidden-card', !isExpanded);
+          });
+          viewAllText.textContent = isExpanded ? 'Show Less' : 'View All Laptops';
+          viewAllBtn.classList.toggle('expanded', isExpanded);
+          viewAllBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+          updateCount();
+
+          if (!isExpanded) {
+            var invSection = document.getElementById('inventory');
+            if (invSection) {
+              var headerHeight = document.querySelector('header').offsetHeight;
+              var targetPosition = invSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+              window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+            }
+          }
+        });
+      } else if (viewAllBtn) {
+        viewAllBtn.parentElement.style.display = 'none';
+        inventoryCount.style.display = 'none';
+      }
+
+      updateCount();
+
+      /* ---------- Product Modal + Lightbox ---------- */
+      var modal = document.getElementById('productModal');
+      var modalClose = document.getElementById('modalClose');
+      var modalCloseBtn = document.getElementById('modalCloseBtn');
+      var modalTitle = document.getElementById('modalTitle');
+      var modalGradeTag = document.getElementById('modalGradeTag');
+      var modalIcon = document.getElementById('modalIcon');
+      var modalSpecs = document.getElementById('modalSpecs');
+      var modalNoteText = document.getElementById('modalNoteText');
+      var modalEnquire = document.getElementById('modalEnquire');
+      var modalImageStage = document.getElementById('modalImageStage');
+      var lastFocused = null;
+
+      // Lightbox
+      var lightbox = document.getElementById('lightbox');
+      var lightboxClose = document.getElementById('lightboxClose');
+      var lightboxIcon = document.getElementById('lightboxIcon');
+      var lightboxTitle = document.getElementById('lightboxTitle');
+      var lightboxSubtitle = document.getElementById('lightboxSubtitle');
+      var zoomInBtn = document.getElementById('zoomIn');
+      var zoomOutBtn = document.getElementById('zoomOut');
+      var zoomResetBtn = document.getElementById('zoomReset');
+      var currentZoom = 1;
+      var currentIcon = 'fa-laptop';
+      var currentModel = '';
+      var currentGrade = '';
+
+      function openModal(card) {
+        lastFocused = document.activeElement;
+
+        var model = card.dataset.model || 'Laptop';
+        var grade = card.dataset.grade || '—';
+        var icon = card.dataset.icon || 'fa-laptop';
+        var cpu = card.dataset.cpu || '—';
+        var ram = card.dataset.ram || '—';
+        var storage = card.dataset.storage || '—';
+        var display = card.dataset.display || '—';
+        var graphics = card.dataset.graphics || '—';
+        var condition = card.dataset.condition || '—';
+        var includes = card.dataset.includes || '—';
+        var note = card.dataset.note || 'This unit has been professionally refurbished.';
+
+        currentModel = model;
+        currentGrade = grade;
+        currentIcon = icon;
+
+        modalTitle.textContent = model;
+        modalGradeTag.textContent = grade;
+        modalIcon.className = 'fas ' + icon + ' big-icon';
+        modalNoteText.textContent = note;
+
+        var specs = [
+          { label: 'Model', value: model, icon: 'fa-tag' },
+          { label: 'Grade', value: grade, icon: 'fa-award' },
+          { label: 'CPU', value: cpu, icon: 'fa-microchip' },
+          { label: 'RAM', value: ram, icon: 'fa-memory' },
+          { label: 'Storage', value: storage, icon: 'fa-hard-drive' },
+          { label: 'Display', value: display, icon: 'fa-tv' },
+          { label: 'Graphics', value: graphics, icon: 'fa-gamepad' },
+          { label: 'Condition', value: condition, icon: 'fa-clipboard-check' },
+          { label: 'Includes', value: includes, icon: 'fa-box-open' }
+        ];
+
+        var html = '';
+        specs.forEach(function(spec) {
+          html += '<div class="spec-row">' +
+                    '<i class="fas ' + spec.icon + '"></i>' +
+                    '<span class="spec-label">' + spec.label + '</span>' +
+                    '<span class="spec-value">' + spec.value + '</span>' +
+                  '</div>';
+        });
+        modalSpecs.innerHTML = html;
+
+        modalEnquire.href = 'mailto:info@monologitech.com?subject=' +
+          encodeURIComponent('Enquiry about ' + model + ' (' + grade + ')');
+
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+
+        setTimeout(function() { modalClose.focus(); }, 100);
+      }
+
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('modal-open');
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+          lastFocused.focus();
+        }
+      }
+
+      /* ---------- Lightbox open / close ---------- */
+      function openLightbox() {
+        lightboxIcon.className = 'fas ' + currentIcon + ' big-icon';
+        lightboxTitle.textContent = currentModel;
+        lightboxSubtitle.textContent = currentGrade + ' · Refurbished · Warranty included';
+        currentZoom = 1;
+        lightboxIcon.style.transform = 'scale(1)';
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('modal-open');
+        setTimeout(function() { lightboxClose.focus(); }, 100);
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        // If modal is not open, remove body lock
+        if (!modal.classList.contains('open')) {
+          document.body.classList.remove('modal-open');
+        }
+      }
+
+      function applyZoom() {
+        lightboxIcon.style.transform = 'scale(' + currentZoom + ')';
+      }
+
+      if (modalImageStage) {
+        modalImageStage.addEventListener('click', openLightbox);
+        modalImageStage.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openLightbox();
+          }
+        });
+        modalImageStage.setAttribute('tabindex', '0');
+        modalImageStage.setAttribute('role', 'button');
+        modalImageStage.setAttribute('aria-label', 'View full image');
+      }
+
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+          if (e.target === lightbox) closeLightbox();
+        });
+      }
+
+      // Zoom controls
+      if (zoomInBtn) {
+        zoomInBtn.addEventListener('click', function() {
+          currentZoom = Math.min(currentZoom + 0.25, 3);
+          applyZoom();
+        });
+      }
+      if (zoomOutBtn) {
+        zoomOutBtn.addEventListener('click', function() {
+          currentZoom = Math.max(currentZoom - 0.25, 0.6);
+          applyZoom();
+        });
+      }
+      if (zoomResetBtn) {
+        zoomResetBtn.addEventListener('click', function() {
+          currentZoom = 1;
+          applyZoom();
+        });
+      }
+
+      // Mouse wheel zoom on lightbox
+      if (lightbox) {
+        lightbox.addEventListener('wheel', function(e) {
+          if (!lightbox.classList.contains('open')) return;
+          e.preventDefault();
+          if (e.deltaY < 0) {
+            currentZoom = Math.min(currentZoom + 0.1, 3);
+          } else {
+            currentZoom = Math.max(currentZoom - 0.1, 0.6);
+          }
+          applyZoom();
+        }, { passive: false });
+      }
+
+      // Attach click handlers to inventory cards
+      document.querySelectorAll('.inventory-card').forEach(function(card) {
+        card.addEventListener('click', function() { openModal(card); });
+        card.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openModal(card);
+          }
+        });
+      });
+
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+      if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) closeModal();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (lightbox.classList.contains('open')) {
+            closeLightbox();
+          } else if (modal.classList.contains('open')) {
+            closeModal();
+          }
+        }
+      });
+
+      /* ---------- Smooth scrolling ---------- */
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            var headerHeight = document.querySelector('header').offsetHeight;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+
+      console.log('MonologicTech Solutions — loaded with enhanced modal image + lightbox.');
+    })();
+  </script>
+</body>
+</html>
