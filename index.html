@@ -76,58 +76,16 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-weight: 800;
-      font-size: 1.4rem;
-      letter-spacing: -0.02em;
-      color: var(--brand-dark);
-      flex-shrink: 0;
       text-decoration: none;
-    }
-
-    .logo-icon {
-      background: var(--brand-blue);
-      width: 42px;
-      height: 42px;
-      border-radius: 13px 4px 13px 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.5rem;
-      font-weight: 800;
-      box-shadow: 0 8px 16px -6px rgba(11, 94, 215, 0.3);
       flex-shrink: 0;
     }
 
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .logo-text .main {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--brand-dark);
-    }
-
-    .logo-text .main span {
-      color: var(--brand-blue);
-    }
-
-    .logo-text .sub {
-      font-size: 0.6rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      color: #64748b;
-      text-transform: uppercase;
-    }
-
-    .tagline-small {
-      font-size: 0.58rem;
-      font-weight: 500;
-      color: #94a3b8;
-      letter-spacing: 0.02em;
+    /* NEW LOGO IMAGE STYLES */
+    .logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+      object-fit: contain;
     }
 
     .nav-toggle {
@@ -747,7 +705,7 @@
       font-weight: 500;
     }
 
-    /* ------ MODAL (with enhanced image area) ------ */
+    /* ------ MODAL ------ */
     .modal-overlay {
       position: fixed;
       inset: 0;
@@ -787,7 +745,6 @@
       transform: translateY(0) scale(1);
     }
 
-    /* Enhanced modal header with larger image */
     .modal-header {
       background: linear-gradient(135deg, #0b1c2e 0%, #1e3a5f 100%);
       color: white;
@@ -823,7 +780,6 @@
       transform: rotate(90deg);
     }
 
-    /* Big product image stage */
     .modal-image-stage {
       position: relative;
       background: radial-gradient(circle at 50% 40%, #f0f7ff 0%, #e2eefc 60%, #d4e6fb 100%);
@@ -841,7 +797,6 @@
       background: radial-gradient(circle at 50% 40%, #e8f2ff 0%, #d8e9fc 60%, #c8e0fa 100%);
     }
 
-    /* Decorative glow ring */
     .modal-image-stage::before {
       content: '';
       position: absolute;
@@ -868,7 +823,6 @@
       transform: scale(1.06) translateY(-3px);
     }
 
-    /* Zoom hint chip */
     .zoom-hint {
       position: absolute;
       bottom: 0.85rem;
@@ -890,7 +844,6 @@
 
     .zoom-hint i { font-size: 0.7rem; }
 
-    /* Grade badge on the image */
     .modal-grade-tag {
       position: absolute;
       top: 1rem;
@@ -907,7 +860,6 @@
       box-shadow: 0 6px 14px -4px rgba(11, 94, 215, 0.5);
     }
 
-    /* Model title block */
     .modal-title-block {
       text-align: center;
       padding: 1.5rem 1.5rem 1.5rem;
@@ -1014,7 +966,7 @@
       flex: none;
     }
 
-    /* ---------- LIGHTBOX (full image view) ---------- */
+    /* ---------- LIGHTBOX ---------- */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -1139,6 +1091,7 @@
       display: flex;
       gap: 0.6rem;
       margin-top: 0.5rem;
+      justify-content: center;
     }
 
     .lightbox-zoom-controls button {
@@ -1170,6 +1123,7 @@
       display: flex;
       align-items: center;
       gap: 0.4rem;
+      justify-content: center;
     }
 
     /* ------ Parts grid ------ */
@@ -1344,7 +1298,9 @@
       padding: 0 1rem;
     }
 
+    /* Adjust footer logo styling */
     .footer-centered .logo { justify-content: center; }
+    .footer-centered .logo-img { height: 40px; }
 
     .footer-centered p {
       color: #4b5f73;
@@ -1390,9 +1346,6 @@
 
     /* ------ Small mobile tweaks ------ */
     @media (max-width: 380px) {
-      .logo-text .main { font-size: 1.05rem; }
-      .logo-text .sub { font-size: 0.55rem; }
-      .logo-icon { width: 38px; height: 38px; font-size: 1.3rem; }
       .hero-content h1 { font-size: 1.75rem; }
       .section-header h2 { font-size: 1.55rem; }
       .modal-title-block h3 { font-size: 1.15rem; }
@@ -1401,6 +1354,8 @@
       .modal-image-stage { min-height: 190px; padding: 2rem 1rem 1.75rem; }
       .lightbox-image-stage .big-icon { font-size: 8rem; }
       .lightbox-image-stage { padding: 3rem 1.5rem; }
+      .logo-img { height: 36px; }
+      .footer-centered .logo-img { height: 32px; }
     }
 
     /* ------ Tablet (≥ 640px) ------ */
@@ -1492,13 +1447,9 @@
   <!-- Header -->
   <header>
     <div class="container navbar">
+      <!-- NEW LOGO IMAGE -->
       <a href="#" class="logo" aria-label="MonologicTech Solutions home">
-        <div class="logo-icon">M</div>
-        <div class="logo-text">
-          <div class="main">Monologic<span>Tech</span></div>
-          <div class="sub">Solutions</div>
-          <div class="tagline-small">Devices Today | Better Tomorrow</div>
-        </div>
+        <img src="logo.png" alt="MonologicTech Solutions - Devices Today | Better Tomorrow" class="logo-img">
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
@@ -1860,12 +1811,9 @@
   <!-- Footer -->
   <footer>
     <div class="container footer-centered">
+      <!-- NEW LOGO IMAGE IN FOOTER -->
       <div class="logo">
-        <div class="logo-icon" style="width:38px; height:38px; font-size:1.3rem;">M</div>
-        <div class="logo-text">
-          <div class="main" style="font-size:1.15rem;">Monologic<span>Tech</span></div>
-          <div class="sub" style="font-size:0.55rem;">Solutions</div>
-        </div>
+        <img src="logo.png" alt="MonologicTech Solutions" class="logo-img">
       </div>
       <p>Refurbished laptops, expert repairs, and genuine parts. Giving technology a second life since 2018.</p>
       <div class="social-icons">
@@ -1880,7 +1828,7 @@
     </div>
   </footer>
 
-  <!-- ============ PRODUCT MODAL (with enhanced image) ============ -->
+  <!-- ============ PRODUCT MODAL ============ -->
   <div class="modal-overlay" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal" role="document">
       <div class="modal-header">
@@ -1888,14 +1836,12 @@
           <i class="fas fa-times"></i>
         </button>
 
-        <!-- Big product image stage (click to zoom) -->
         <div class="modal-image-stage" id="modalImageStage" title="Click to view full image">
           <span class="modal-grade-tag" id="modalGradeTag">Grade A</span>
           <i class="fas fa-laptop big-icon" id="modalIcon"></i>
           <span class="zoom-hint"><i class="fas fa-expand"></i> Tap to zoom</span>
         </div>
 
-        <!-- Model title block -->
         <div class="modal-title-block">
           <h3 id="modalTitle">Laptop Model</h3>
           <p id="modalSubtitle">Refurbished · Certified · Warranty included</p>
@@ -1920,7 +1866,7 @@
     </div>
   </div>
 
-  <!-- ============ LIGHTBOX (full image view) ============ -->
+  <!-- ============ LIGHTBOX ============ -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full image view" aria-hidden="true">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close full image">
       <i class="fas fa-times"></i>
@@ -2121,7 +2067,6 @@
         }
       }
 
-      /* ---------- Lightbox open / close ---------- */
       function openLightbox() {
         lightboxIcon.className = 'fas ' + currentIcon + ' big-icon';
         lightboxTitle.textContent = currentModel;
@@ -2137,7 +2082,6 @@
       function closeLightbox() {
         lightbox.classList.remove('open');
         lightbox.setAttribute('aria-hidden', 'true');
-        // If modal is not open, remove body lock
         if (!modal.classList.contains('open')) {
           document.body.classList.remove('modal-open');
         }
@@ -2167,7 +2111,6 @@
         });
       }
 
-      // Zoom controls
       if (zoomInBtn) {
         zoomInBtn.addEventListener('click', function() {
           currentZoom = Math.min(currentZoom + 0.25, 3);
@@ -2187,7 +2130,6 @@
         });
       }
 
-      // Mouse wheel zoom on lightbox
       if (lightbox) {
         lightbox.addEventListener('wheel', function(e) {
           if (!lightbox.classList.contains('open')) return;
@@ -2201,7 +2143,6 @@
         }, { passive: false });
       }
 
-      // Attach click handlers to inventory cards
       document.querySelectorAll('.inventory-card').forEach(function(card) {
         card.addEventListener('click', function() { openModal(card); });
         card.addEventListener('keydown', function(e) {
@@ -2244,7 +2185,7 @@
         });
       });
 
-      console.log('MonologicTech Solutions — loaded with enhanced modal image + lightbox.');
+      console.log('MonologicTech Solutions — loaded with new logo image.');
     })();
   </script>
 </body>
