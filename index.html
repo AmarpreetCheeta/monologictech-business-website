@@ -80,7 +80,6 @@
       flex-shrink: 0;
     }
 
-    /* NEW LOGO IMAGE STYLES */
     .logo-img {
       height: 48px;
       width: auto;
@@ -1298,7 +1297,6 @@
       padding: 0 1rem;
     }
 
-    /* Adjust footer logo styling */
     .footer-centered .logo { justify-content: center; }
     .footer-centered .logo-img { height: 40px; }
 
@@ -1308,6 +1306,7 @@
       font-size: 0.9rem;
     }
 
+    /* Social icons - Instagram & LinkedIn only */
     .social-icons {
       display: flex;
       gap: 1rem;
@@ -1326,6 +1325,7 @@
       height: 44px;
       background: var(--brand-light-blue);
       border-radius: 14px;
+      text-decoration: none;
     }
 
     .social-icons a:hover,
@@ -1447,7 +1447,6 @@
   <!-- Header -->
   <header>
     <div class="container navbar">
-      <!-- NEW LOGO IMAGE -->
       <a href="#" class="logo" aria-label="MonologicTech Solutions home">
         <img src="logo.png" alt="MonologicTech Solutions - Devices Today | Better Tomorrow" class="logo-img">
       </a>
@@ -1787,21 +1786,17 @@
             </div>
             <div class="contact-detail">
               <i class="fas fa-envelope"></i>
-              <div><div class="label">Email</div><a href="mailto:info@monologitech.com" class="value">info@monologitech.com</a></div>
-            </div>
-            <div class="contact-detail">
-              <i class="fas fa-globe"></i>
-              <div><div class="label">Website</div><a href="https://www.monologitech.com" target="_blank" rel="noopener" class="value">www.monologitech.com</a></div>
+              <div><div class="label">Email</div><a href="mailto:amarpreet282001@gmail.com" class="value">amarpreet282001@gmail.com</a></div>
             </div>
             <div class="contact-detail">
               <i class="fas fa-map-marker-alt"></i>
-              <div><div class="label">Location</div><span class="value">India</span></div>
+              <div><div class="label">Location</div><span class="value">Mumbai</span></div>
             </div>
           </div>
           <div class="contact-cta-box">
             <h3>Ready to give your laptop a second life?</h3>
             <p>Whether you need a reliable refurbished machine or expert repair, we're just a call or email away. Free consultations, honest advice, and quality workmanship guaranteed.</p>
-            <a href="mailto:info@monologitech.com" class="btn-primary"><i class="fas fa-envelope"></i> Send an email</a>
+            <a href="mailto:amarpreet282001@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i> Send an email</a>
           </div>
         </div>
       </div>
@@ -1811,16 +1806,17 @@
   <!-- Footer -->
   <footer>
     <div class="container footer-centered">
-      <!-- NEW LOGO IMAGE IN FOOTER -->
       <div class="logo">
         <img src="logo.png" alt="MonologicTech Solutions" class="logo-img">
       </div>
       <p>Refurbished laptops, expert repairs, and genuine parts. Giving technology a second life since 2018.</p>
       <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/monologictech/" target="_blank" rel="noopener" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/monologictech-solutions" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
       </div>
     </div>
     <div class="container copyright">
@@ -1855,7 +1851,7 @@
           <p id="modalNoteText">This unit has been professionally refurbished and passes our 60‑point quality check.</p>
         </div>
         <div class="modal-actions">
-          <a href="mailto:info@monologitech.com?subject=Enquiry%20about%20refurbished%20laptop" class="btn-primary" id="modalEnquire">
+          <a href="mailto:amarpreet282001@gmail.com?subject=Enquiry%20about%20refurbished%20laptop" class="btn-primary" id="modalEnquire">
             <i class="fas fa-envelope"></i> Enquire about this model
           </a>
           <button class="btn-outline" id="modalCloseBtn" type="button">
@@ -1988,7 +1984,6 @@
       var modalImageStage = document.getElementById('modalImageStage');
       var lastFocused = null;
 
-      // Lightbox
       var lightbox = document.getElementById('lightbox');
       var lightboxClose = document.getElementById('lightboxClose');
       var lightboxIcon = document.getElementById('lightboxIcon');
@@ -2048,7 +2043,7 @@
         });
         modalSpecs.innerHTML = html;
 
-        modalEnquire.href = 'mailto:info@monologitech.com?subject=' +
+        modalEnquire.href = 'mailto:amarpreet282001@gmail.com?subject=' +
           encodeURIComponent('Enquiry about ' + model + ' (' + grade + ')');
 
         modal.classList.add('open');
@@ -2185,7 +2180,7 @@
         });
       });
 
-      console.log('MonologicTech Solutions — loaded with new logo image.');
+      console.log('MonologicTech Solutions — contact details updated.');
     })();
   </script>
 </body>
